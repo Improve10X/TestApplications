@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 public class WhatsAppRvAdapter extends RecyclerView.Adapter<WhatsAppRvHolder> {
     public WhatsappItem[] items;
     public WhatsAppRvAdapter(WhatsappItem[]whatsappItems){
@@ -28,6 +30,7 @@ public class WhatsAppRvAdapter extends RecyclerView.Adapter<WhatsAppRvHolder> {
         holder.discTxt.setText(item.disc);
         holder.timeTxt.setText(item.timeAndDay);
         holder.unreadmsgTxt.setText(item.unReadMessage);
+        Picasso.get().load(item.imageUrl1).into(holder.whatsapp1Iv);
     }
 
     @Override
